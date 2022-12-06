@@ -13,10 +13,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
-        darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
-        debugShowCheckedModeBanner: false,
-        title: 'NBA Data App',
-        home: Home());
+      theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
+      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+      debugShowCheckedModeBanner: false,
+      title: 'NBA Data App',
+      home: const Splash(),
+      routes: <String, WidgetBuilder>{
+        '/home': (BuildContext context) => Home(title: 'NBA Teams'),
+        '/splash': (BuildContext context) => const Splash(),
+      },
+    );
   }
 }

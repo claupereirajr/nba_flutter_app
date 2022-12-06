@@ -4,7 +4,8 @@ import 'package:nba_flutter_app/models/teams.dart';
 import 'package:nba_flutter_app/widgets/customAppBar.dart';
 
 class Home extends StatelessWidget {
-  Home({Key? key}) : super(key: key);
+  final String title;
+  Home({Key? key, required this.title}) : super(key: key);
 
   List<Team> teams = [];
 
@@ -32,7 +33,7 @@ class Home extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       extendBody: true,
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(title: title),
       body: SafeArea(
         minimum: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
         child: FutureBuilder(
