@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
+import 'package:nba_flutter_app/pages/pages.dart';
 import 'package:nba_flutter_app/models/teams.dart';
 import 'package:nba_flutter_app/widgets/customAppBar.dart';
 
@@ -49,6 +50,11 @@ class Home extends StatelessWidget {
                           '${teams[index].abbreviation} ${teams[index].name}'),
                       subtitle: Text(teams[index].city),
                       trailing: const Icon(Icons.chevron_right),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => TeamDetail(team: teams[index]),
+                        ));
+                      },
                     ),
                   );
                 },

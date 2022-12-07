@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
       debugShowCheckedModeBanner: false,
       title: 'NBA Data App',
-      home: const Splash(),
+      home: Home(title: 'NBA Teams'),
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) => Home(title: 'NBA Teams'),
         '/splash': (BuildContext context) => const Splash(),
