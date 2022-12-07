@@ -27,13 +27,66 @@ class TeamDetail extends StatelessWidget {
                     horizontal: 20.0, vertical: 10.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
-                      team.name,
-                      style: const TextStyle(
-                          fontSize: 18.0, fontWeight: FontWeight.bold),
+                    SizedBox(
+                      width: 64.0,
+                      height: 64.0,
+                      child: Image.network(
+                          width: 64.0,
+                          height: 64.0,
+                          fit: BoxFit.cover,
+                          'https://sportteamslogo.com/api?key=f5606875fc004cb2be1e2f89e30d720b&size=medium&tid=3427'),
                     ),
-                    Text(team.abbreviation),
+                    SizedBox(
+                      width: 240.0,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                team.name,
+                                style: const TextStyle(
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Text(team.abbreviation),
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Row(
+                            children: [
+                              const Text('City: ',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              Text(team.city)
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text('Division: ',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              Text(team.division)
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text('Conference: ',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              Text(team.conference)
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
